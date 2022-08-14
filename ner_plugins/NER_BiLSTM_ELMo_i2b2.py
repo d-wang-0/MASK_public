@@ -232,7 +232,7 @@ class NER_BiLSTM_ELMo_i2b2(object):
             for j in range(0, len(Y[i])):
                 Y_test_F.append(index2tags[Y[i][j]])
 
-        print(metrics.classification_report(Y_pred_F, Y_test_F, labels=labels))
+        print(metrics.classification_report(Y_test_F, Y_pred_F, labels=labels))
 
     def save(self, model_path):
         """

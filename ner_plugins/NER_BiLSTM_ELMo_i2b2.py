@@ -151,6 +151,11 @@ class NER_BiLSTM_ELMo_i2b2(object):
         return self.model
 
     def transform_sequences(self, token_sequences):
+        """
+        Function that does preprocessing of the input sequences.
+         * Sequences are truncated and padded to the maximum length.
+         * Tags are converted to indices.
+        """
         text = []
         for ts in token_sequences:
             for t in ts:

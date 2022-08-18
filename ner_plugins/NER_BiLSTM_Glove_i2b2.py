@@ -15,15 +15,15 @@ limitations under the License.
 """
 
 #Code by Nikola Milosevic
-from keras import Sequential
-from keras.engine.saving import model_from_json
-from keras.layers import Embedding, Bidirectional, LSTM, Dense, TimeDistributed
+from tensorflow.keras import Sequential
+from tensorflow.keras.models import model_from_json
+from tensorflow.keras.layers import Embedding, Bidirectional, LSTM, Dense, TimeDistributed
 from sklearn.preprocessing import LabelBinarizer
 from tqdm import tqdm
-from keras_preprocessing import sequence
+from tensorflow.keras.preprocessing import sequence
 from utils.spec_tokenizers import tokenize_fa
 import numpy as np
-from keras_preprocessing.text import Tokenizer
+from tensorflow.keras.preprocessing.text import Tokenizer
 import pickle
 import os
 import urllib.request

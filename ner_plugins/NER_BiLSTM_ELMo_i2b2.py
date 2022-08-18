@@ -19,10 +19,10 @@ import os
 import numpy as np
 import tensorflow as tf
 import tensorflow_hub as hub
-from keras import backend as K
-from keras.models import Model, Input
-from keras.layers.merge import add
-from keras.layers import LSTM, Dense, TimeDistributed, Bidirectional, Lambda
+from tensorflow.keras import backend as K
+from tensorflow.keras.models import Model
+from tensorflow.keras.layers import add
+from tensorflow.keras.layers import LSTM, Dense, TimeDistributed, Bidirectional, Lambda, Input
 from utils.spec_tokenizers import tokenize_fa
 
 

@@ -44,6 +44,7 @@ def tokenize_to_seq(documents):
         for token in tokens:
             token_txt = text[token[0]:token[1]]
             found = False
+            # tag tokens with appropriate category
             for tag in doc["tags"]:
                 if int(tag["start"])<=token[0] and int(tag["end"])>=token[1]:
                     token_tag = tag["tag"]
@@ -53,6 +54,7 @@ def tokenize_to_seq(documents):
                 token_tag = "O"
                 #token_tag_type = "O"
             sequence.append((token_txt,token_tag))
+            # split into sequences based on punctuation
             if token_txt == "." or token_txt == "?" or token_txt == "!":
                 sequences.append(sequence)
                 sequence = []
@@ -105,7 +107,7 @@ def custom_span_tokenize(text, language='english', preserve_line=True):
             :type preserver_line: bool
             """
     tokens = custom_word_tokenize(text)
-    tokens = ['"' if tok in ['``', "''"] else tok for tok in tokens]
+    tokens = ['"' if tok in ['``', "''"] else tok for tok in tokens] # standardize quotation marks
     return align_tokens(tokens, text)
 
 def custom_word_tokenize(text, language='english', preserve_line=False):
@@ -124,11 +126,12 @@ def custom_word_tokenize(text, language='english', preserve_line=False):
     :type preserver_line: bool
     """
     tokens = []
-    sentences = [text] if preserve_line else nltk.sent_tokenize(text, language)
+    sentences = [text] if preserve_line else nltk.sent_tokenize(text, language) # tokenize sentences
+    # for some reason, these tokenized sentences are ignored and all tokens are added to a single list
     for sent in sentences:
         for token in _treebank_word_tokenizer.tokenize(sent):
             if "-" in token:
-                m = re.compile("(\d+)(-)([a-zA-z-]+)")
+                m = re.compile("(\d+)(-)([a-zA-z-]+)") # not sure exactly what this is supposed to match but split these up
                 g = m.match(token)
                 if g:
                     for group in g.groups():

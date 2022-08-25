@@ -12,7 +12,7 @@ This notebook is intended to serve as a basic demonstration of the NER models. Y
 
 This notebook is intended to serve as more of a development notebook for the NER models. Most of the code required to run the `NER_BiLSTM_ELMo_i2b2_pad_mask` model is directly included in the notebook rather than relying on imports for an easier development workflow on Colab.
 
-Some basic documentation of the code is included. For more details about the model see [the wiki](wiki/BiLSTM-ELMo#modified).
+Some basic documentation of the code is included. For more details about the model see [the wiki](../../../wiki/BiLSTM-ELMo#modified).
 
 ## Mask Dataset Exploration [![Open In Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/d-wang-0/MASK_public/blob/colab/notebooks/Mask_Dataset_Exploration.ipynb)
 

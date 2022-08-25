@@ -1,6 +1,10 @@
 [![Build Status](https://travis-ci.com/icescentral/mask.svg?token=JiqKgisBJvSwPnKWKxhV&branch=develop)](https://travis-ci.com/icescentral/mask)
 [![PWC](https://img.shields.io/endpoint.svg?url=https://paperswithcode.com/badge/mask-a-flexible-framework-to-facilitate-de/named-entity-recognition-on-i2b2-de)](https://paperswithcode.com/sota/named-entity-recognition-on-i2b2-de?p=mask-a-flexible-framework-to-facilitate-de)
 
+# Note about this Fork/Branch
+
+Most of this code has not been tested locally and was developed through Google Colab. The requirements and installation for local machines will probably be different. See the [notebooks folder](/notebooks) for more details on the notebooks. See the [wiki](../../wiki) for more comments.
+
 # Mask Project
 
 Mask project is a collaborative project between [Institute for Clinical Evaluative Sciences](https://www.ices.on.ca/), [University of

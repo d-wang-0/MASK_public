@@ -36,7 +36,7 @@ def preview_token_seq(tokens):
     out_string = ''
     for token, label in tokens:
         if label == 'O':
-            out_string += f'({token[0]}) '
+            out_string += f'({token}) '
         else:
             tag = label
             if tag in tag2color:
